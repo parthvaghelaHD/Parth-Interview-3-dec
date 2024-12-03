@@ -1,0 +1,39 @@
+1. **Explain the following concepts in Node.js:**
+- Event Loop
+    - event loop is basically one type of loop that we can say that is continously checking the callstack and the microtask queue and 
+    callback queue.
+    - so when process come into the callstack that will be execute once callstack will be empty then eventloop checks the microtask 
+    queue if there is any pending task then it will put into the callstack and once callstack and microtask queue will be empty then
+    it will check if there is any callback queue tasks pemnding then it will put it it to the call stack  
+    so thats how the whole event loop concepts works.
+
+- Asynchronous Programming
+    asynchronous programming allows us to handle or run the taks without blocking the main thread. to achieve the asynchronous
+    programing we have concepts of callback promises, and the async await that enables the handle the tasks without blocking the main thread. or we can say on single thread
+
+- Middleware
+    - middleware is basically one type of common function that helps uase in the every route to validafte the logic iwhether it is corrrect or not 
+    so some jwtauthentication middlwqarees and joi middleware so that all the helps to add one additional check so that is all about the middlwqaRE
+
+
+
+2. **Discuss the importance of connection pooling in database interactions. How does
+it improve performance?**
+   -  connection pooling reuses a set of the database connections to hande the muultiple requests efficiancy. It Reduces the overhead of creating and callclosing connections 
+   repeatetly improving performance and scalability.
+
+
+
+3. **What are the advantages of using prepared statements in MSSQL?**
+ - it enhance the secuity by preventing the SQL Injections. also improve theperformance by reusing compiled query plans. they also simplyfy the 
+ parameterized query handling.
+
+
+4. **Describe the process of sending an email using Node.js. What packages are
+commonly used for this purpose?**
+    - for sending an emails we need to configure the gmail credentials with nodemailer 
+    - required nodemailer package
+    - so with the help of credentials using the smtp connection on the secure port number we can pass the username and password of 
+    the gmail id from where i am sending so its like senders credentials i nees to setup and the recevers information like email body,
+    subject and the email id of the receiver i need to pass so it helps in such a use cases like after registration email notification
+    subscription remainder notifications etc...
