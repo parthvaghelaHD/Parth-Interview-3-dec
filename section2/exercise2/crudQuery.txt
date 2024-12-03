@@ -1,0 +1,52 @@
+// create table query
+CREATE TABLE Products (
+    id INT PRIMARY KEY IDENTITY (1,1),
+    name varchar(50) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) NOT NULL,
+    created_at DATETIME DEFAULT GETDATE()
+);
+
+
+// Insert Query 
+
+INSERT INTO Products (name, description, price) VALUES ('product1', 'this is description', 2499.99);
+IF(@price>0)
+BEGIN 
+    INSERT INTP Products(name, description, price ) VALUES (@name, @description, @price);
+END
+ELSE
+BEGIN 
+    PRINT 'Price must be greater then 0';
+END
+
+
+//  fetch the Products
+SELECT * from the Products;
+
+
+// update the Product
+
+UPDATE Products SET price=2500.20
+where id=1 AND price>0;
+
+IF EXISTS (SELECT 1 FROM Products where id=@id)
+BEFIN
+    UPDATE Products SET name=@name , price=@pricewhere id=@id and price>0
+END
+ELSE
+BEGIN 
+    PRINT 'Product not found'
+END
+
+
+// DELETE query 
+
+IF EXISTS( SELECT 1 from Products where id=@id)
+BEGIN   
+    DELETE FROM Products WHERE id=@id;
+END
+ELSE
+BEGIN
+    PRINT 'product not found'
+END
